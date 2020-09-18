@@ -1,0 +1,19 @@
+<div class="alert alert-danger" *ngIf="errorMessage | async as msg">
+    {{msg}}
+  </div>
+  <table class='table table-striped'>
+    <thead>
+    <tr>
+      <th>From currency</th>
+      <th>To currency</th>
+      <th>Rate</th>    
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let rate of rates | async">
+      <td>{{ rate.fromCurrency }} </td>
+      <td>{{ rate.toCurrency }}</td>
+      <td>{{ rate.value }}</td>
+    </tr>
+    </tbody>
+  </table>
